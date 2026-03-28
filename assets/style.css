@@ -12,20 +12,24 @@ body{
     color: white;
 }
 
-section{
-    padding: 15px;
-    width: 400px;
-    background-color:#0a2a66;
+section {
+    padding: 20px;
+    width: 100%;
+    max-width: 420px;   /* controla o tamanho máximo */
+    margin: 0 auto;     /* centraliza automaticamente */
+    background-color: #0a2a66;
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box; /* impede quebra ao expandir */
 }
+
 h1{
     font-size: 32px;
     margin-bottom: 10px;
 }
 
 #howToUse{
-    width: 400px;
+    max-width: 420px;
     font-size: 1.1em;
     margin: 20px 20px;
 
@@ -37,6 +41,7 @@ h1{
     margin-bottom:20px;
 }
 #cpf{
+    max-width: 60%;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -49,14 +54,15 @@ h1{
 #cpf::placeholder{
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    min-font-size: 15px;
 }
 
 #buttonSubmit{
+    max-width: 25%;
     background-color: #22c55e;
     cursor: pointer;
     padding: 10px 18px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
