@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de CPF</title>
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+<body>
+    <h1>Validador de CPF</h1>
+    <p id="howToUse">Digite o CPF e clique em “Validar” para executar a verificação de autenticidade do número. </p>
+    <section>
+        
+        <div id="inf">
+            <input type="text" name="cpfText" id="cpf" placeholder="000.000.000-00"
+            maxlength="14" minlength="11">
+            <input type="button" value="Validar" id="buttonSubmit">
+        </div>
+        <div id="res">
+
+        </div>
+        <div class="numbers">
+            <button class="numbersButton">1</button>
+            <button class="numbersButton">2</button>
+            <button class="numbersButton">3</button>
+        </div>
+        <div class="numbers">
+            <button class="numbersButton">4</button>
+            <button class="numbersButton">5</button>
+            <button class="numbersButton">6</button>
+        </div>
+        <div class="numbers">
+            <button class="numbersButton">7</button>
+            <button class="numbersButton">8</button>
+            <button class="numbersButton">9</button>
+        </div>
+        <div class="numbers">
+            <button id="refresh">
+                <span class="material-symbols-outlined">
+                    refresh
+                </span>
+            </button>
+
+            <button class="numbersButton">0</button>
+            <button id="buttonClean">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </button>
+        </div>
+
+        
+    </section>
+    
+</body>
+</html>
