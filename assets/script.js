@@ -80,10 +80,11 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         if(firstDigit === arrayCpfNumber[arrayCpfNumber.length - 2] 
             && secondDigit === arrayCpfNumber[arrayCpfNumber.length - 1]){
-
+                console.log(firstDigit,secondDigit);
             return("cpf válido!");
 
         }else{
+            console.log(firstDigit,secondDigit);
             return("cpf inválido!");
         }
 
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         let digit = null;
 
-        if (11 - (weightedSum % 11) > 10){
+        if (11 - (weightedSum % 11) > 9){
             digit = 0;
         }else{
             digit = 11 - (weightedSum % 11)
@@ -121,7 +122,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     function calculateSecondDigit(array){
         let weightedValues = array.map(function(num, indice) {
-                return num * (10 - indice);
+                return num * (11 - indice);
         });
 
         weightedValues.splice(-1,1);
@@ -131,9 +132,11 @@ document.addEventListener("DOMContentLoaded",()=>{
             return acu;
         },0);
 
+        console.log(weightedSum);
+
         let digit = null;
 
-        if (11 - (weightedSum % 11) > 10){
+        if (11 - (weightedSum % 11) > 9){
             digit = 0;
         }else{
             digit = 11 - (weightedSum % 11)
