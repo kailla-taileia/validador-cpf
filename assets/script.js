@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         
     }); 
 
-    
+//retorna o resultado no paragrafo;
     function getResult(button){ 
         let p = createRes(res);
         button.addEventListener("click",()=>{
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     };
 
 
-
+//coloca as mascaras no input conforme digita
     function maskCPF(num) {
         num = num.replace(/\D/g, "");
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
        
-
+//remove as mascaras do array
     function removeCpfMask(){  //>>>>>>limpa o cpf dos elementos de . -;
         if(inputCPF.value.includes(".") && inputCPF.value.includes("-")){
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     };
 
 
-
+//valida se o cpf é válido ou não
     function isValidCPF(){
 
         const cpf = removeCpfMask();
@@ -78,23 +78,36 @@ document.addEventListener("DOMContentLoaded",()=>{
         let firstDigit = calculateFirstDigit(arrayCpfNumber);
         let secondDigit = calculateSecondDigit(arrayCpfNumber);
 
-        if(firstDigit === arrayCpfNumber[arrayCpfNumber.length - 2] 
+
+        if(allDigitsEqual(arrayCpfNumber)) {
+            return("cpf inválido!");
+        }
+
+
+        else if(firstDigit === arrayCpfNumber[arrayCpfNumber.length - 2] 
             && secondDigit === arrayCpfNumber[arrayCpfNumber.length - 1]){
-                console.log(firstDigit,secondDigit);
+                
             return("cpf válido!");
 
-        }else{
-            console.log(firstDigit,secondDigit);
+        }
+        
+        else{
+            
             return("cpf inválido!");
         }
 
         
     }
 
+//verificar se todos os digitos tem o mesmo valor
+    function allDigitsEqual(cpfArray) {
+        return cpfArray.every(num => num === cpfArray[0]);
+    }
 
 
 
-    function calculateFirstDigit(array){
+//calculo primeiro digito
+    function calculateFirstDigit(array){                            
         let weightedValues = array.map(function(num, indice) {
                 return num * (10 - indice);
         });
@@ -119,7 +132,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-
+//calculo segundo digito
     function calculateSecondDigit(array){
         let weightedValues = array.map(function(num, indice) {
                 return num * (11 - indice);
@@ -147,7 +160,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     }
 
 
-
+//cria o paragrafo para receber o resultado
     function createRes(parent){ //>>>>>>cria um paragrafo
         const p = document.createElement("p");
         parent.appendChild(p);
@@ -159,7 +172,7 @@ document.addEventListener("DOMContentLoaded",()=>{
    
 
 
-
+//evento de click dos botão de numero
     function ClickButtons(){
         this.addEventListener("click",(e)=>{
             const el = e.target;
