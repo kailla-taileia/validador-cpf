@@ -54,7 +54,7 @@ h1{
 #cpf::placeholder{
     text-align: center;
     font-weight: bold;
-    min-font-size: 15px;
+    font-size: 15px;
 }
 
 #buttonSubmit{
